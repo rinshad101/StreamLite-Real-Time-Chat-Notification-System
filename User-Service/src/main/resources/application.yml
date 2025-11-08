@@ -21,4 +21,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-JWT_SECRET_KEY: "qwertyuioplkjhgfdsazxcvbnmmkiuytrewasdfghjnbvcxzswergb"
+jwt:
+  secret: "hfhdffghjmnzlkapoqwiurhjsnxmdnffhshdncmnssjhdjlkapqoiwuedcskjsd"
+  access-expiration: 900000
+  refresh-expiration: 604800000

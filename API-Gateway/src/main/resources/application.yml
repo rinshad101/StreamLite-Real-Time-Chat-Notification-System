@@ -9,13 +9,20 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: http://localhost:8081
           predicates:
             - Path=/api/users/**
+
+        - id: admin-user-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/admin/**
+
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
-JWT_SECRET_KEY: "qwertyuioplkjhgfdsazxcvbnmmkiuytrewasdfghjnbvcxzswergb"
+jwt:
+  secret: "hfhdffghjmnzlkapoqwiurhjsnxmdnffhshdncmnssjhdjlkapqoiwuedcskjsd"

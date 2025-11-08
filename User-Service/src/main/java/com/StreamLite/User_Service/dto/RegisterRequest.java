@@ -1,27 +1,17 @@
-package com.StreamLite.User_Service.model;
+package com.StreamLite.User_Service.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true, nullable = false)
-    private String email;
+public class RegisterRequest {
 
     private String name;
+    private String email;
     private String password;
     private String role;
 
-    public User() {
+    public RegisterRequest() {
     }
 
-    public User(String email, Long id, String name, String password, String role) {
+    public RegisterRequest(String email, String name, String password, String role) {
         this.email = email;
-        this.id = id;
         this.name = name;
         this.password = password;
         this.role = role;
@@ -33,14 +23,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
